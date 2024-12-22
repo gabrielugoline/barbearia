@@ -1,0 +1,815 @@
+/*variáveis Dark Mode*/
+:root{
+    --body-gb: #fafafa;
+    --bg-dark-mode: #d3d2d2;
+    --btn-dark-mode:#292929;
+    --body-navbar:  #f2f2f2;
+    --bady-bg-sec:rgba(160, 160, 160, 0.103);
+    --body-color:#555;
+    --body-color-p:#252525;
+    --link-color: #222;
+    --link-color-hover:rgba(202, 223, 166, 1);
+}
+
+/* Define o estilo da barra de rolagem */
+::-webkit-scrollbar {
+    width: 12px; /* Largura da barra de rolagem (pode ajustar conforme necessário) */
+    height: 12px; /* Altura da barra de rolagem (para scroll horizontal) */
+}
+
+/* Estilo do "polegar" da barra de rolagem (parte que você arrasta) */
+::-webkit-scrollbar-thumb {
+    background-color: #133252; /* Cor do polegar */
+    border-radius: 10px; /* Cantos arredondados */
+}
+
+/* Estilo da trilha da barra de rolagem (a parte por onde o polegar desliza) */
+::-webkit-scrollbar-track {
+    background-color: #ffffff75; /* Cor do fundo da trilha */
+    border-radius: 10px; /* Cantos arredondados da trilha */
+}
+.dark-mode:root{
+    --body-gb: #292929;
+    --bg-dark-mode: #292929;
+    --btn-dark-mode:#bfa640;
+    --body-navbar:  #1f1f1f;
+    --bady-bg-sec:rgb(26, 26, 26);
+    --body-color:rgb(180, 180, 180);
+    --body-color-p:#dddddd;
+    --link-color: rgb(223, 221, 221);
+    --link-color-hover:rgba(202, 223, 166, 1);
+}
+
+
+*{
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    font-family: 'Roboto', sans-serif;
+    
+}
+
+body{
+    background-color: var(--body-gb);
+}
+
+
+
+/*button Dark Mode*/
+
+.dark-mode-container{
+    margin: 0 0 0 20px;
+}
+
+#switch{
+    position: relative;
+    width: 50px;
+}
+
+#switch::before{
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 50px;
+    height: 25px;
+    background: var(--bg-dark-mode);
+    border-radius: 20px;
+}
+
+#switch:checked:before{
+    background: #555;
+}
+
+#switch::after{
+    content: '🌙';
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    background: var(--btn-dark-mode);
+    border-radius: 20px;
+    transition: .25s;
+    border: 3px solid var(--btn-dark-mode);
+    box-sizing: border-box;
+}
+#switch:checked::after{
+    left: 25px;
+}
+
+/* header */
+
+
+
+.menu{
+    background: transparent;
+    padding: 20px 0;
+}
+
+.menu-container{
+    max-width: 1100px;
+    margin:auto;
+}
+
+.menu-container::after, .menu-container::before{
+    content: '';
+    display: table;
+    clear: both;
+}
+
+.menu-logo{
+    display: block;
+    float: left;
+    margin-left: 10px;
+}
+
+.menu-logo img{
+    max-width: 150px;
+}
+
+.menu-nav{
+    display: block;
+    float: right;
+    margin-right: 10px;
+}
+
+.menu-nav li{
+    display: inline-block;
+    padding: 20px 0;
+}
+
+.menu-nav a{
+    display: block;
+    padding: 10px 20px;
+    text-decoration: none;
+    color: rgb(228, 228, 228);
+    text-transform: uppercase;
+    transition: .3s;
+}
+
+.menu-nav a:hover{
+    color: #ff0000;
+    border-color: red;
+}
+
+
+
+/* Estilo  botão */
+.menu-agendamento-btn{
+    margin-left: 50px;
+    top: 15px;
+    font-size: 16px; /* Tamanho da fonte */
+    font-weight: bold; /* Deixa o texto em negrito */
+    color: white; /* Cor do texto */
+    text-decoration: none; /* Remove o sublinhado do link */
+    padding: 10px 20px; /* Adiciona espaço interno no botão */
+    border: 2px solid white; /* Borda branca visível inicialmente */
+    border-radius: 25px; /* Bordas arredondadas */
+    position: relative; /* Para usar animações e efeitos */
+    overflow: hidden; /* Garante que o efeito de preenchimento da borda não ultrapasse */
+    transition: color 0.3s, border-color 0.3s; /* Suaviza a transição da cor do texto e borda */
+}
+
+/* Efeito ao passar o mouse sobre o botão */
+.botao-agendamento:hover {
+    color: white; /* O texto continua branco */
+    border-color: red; /* Muda a borda para vermelha */
+    color: red;
+}
+
+/* Animação de preenchimento da borda */
+.botao-agendamento::before {
+    content: ''; /* Necessário para criar o pseudo-elemento */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%; /* Inicialmente o pseudo-elemento ocupa todo o botão */
+    height: 100%; /* Inicialmente o pseudo-elemento ocupa todo o botão */
+    background-color: red; /* Cor de preenchimento da borda */
+    transition: width 0.3s, height 0.3s, top 0.3s, left 0.3s; /* Suaviza a animação */
+    border-radius: 50%; /* Faz o preenchimento da borda arredondada */
+    z-index: -1; /* Coloca o pseudo-elemento abaixo do texto */
+    transform: scale(0); /* Inicialmente o pseudo-elemento é invisível */
+}
+
+/* Efeito de preenchimento do pseudo-elemento quando passa o mouse */
+.botao-agendamento:hover::before {
+    transform: scale(1); /* Faz o pseudo-elemento preencher o botão */
+}
+
+
+.menu-nav .closebtn{
+    display: none;
+}
+
+.menu-open{
+    display: none;
+}
+
+@media(max-width: 1150px){
+    .menu-container{
+        max-width: 960px;
+    }
+
+
+}
+
+@media(max-width:880px){
+    .menu-container{
+        max-width: 780px;
+        margin: auto;
+    }
+
+
+
+    .menu-logo{
+       display: block;
+       padding: 0 10px;
+       float: right;
+    }
+    
+    .menu-nav {
+        height: 100vh;
+        width: 0;
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        background-color: var(--body-navbar);
+        overflow-x: hidden;
+        transition: 0.5s;
+        padding-top: 60px;
+
+    }
+
+    .menu-open{
+        display: block;
+        float: left;
+        padding: 0 20px;
+        color: #ffffff;
+    }
+
+    .menu-nav a{
+        padding: 8px 8px 8px 32px;
+        text-decoration: none;
+        font-size: 25px;
+        color: var(--link-color);
+        display: block;
+        transition: 0.3s;
+    }
+
+    .menu-nav .closebtn {
+        display: block;
+        position: absolute;
+        top: 0;
+        right: 25px;
+        font-size: 36px;
+        margin-left: 50px;
+      }
+
+      .menu-nav .menu-agendamento-btn{
+        margin-left: 10px;
+        margin-top: 20px;
+        font-size: 1.25em;
+        width: 100%;
+        border-color: rgb(0, 0, 0);
+        color: rgb(0, 0, 0);
+    }
+
+
+}
+
+/* intro */
+
+.intro{
+    background: url(img/img100.jpg) no-repeat center;
+    background-size: cover;
+    padding: 300px 0;
+    margin-top: -180px;
+}
+
+.intro-container{
+    text-align: center;
+    margin-right: 49em;
+    text-transform: uppercase;
+}
+
+.intro-container h1{
+    font-size: 2.75em;
+    color: rgb(228, 228, 228);
+}
+
+.intro-container strong{
+    color: #113558;
+}
+
+@media(max-width: 1150px){
+
+    .intro-container{
+        margin-right: 39em;
+       
+    }
+}
+
+@media(max-width: 880px){
+    
+    .intro-container{
+        margin: auto;
+    }
+
+    .intro{ 
+        margin-top: -260px;
+        width: 103%;
+    }
+}
+
+.about {
+    background-color: #06121e;
+    overflow: hidden; /*esconde o que passa do tamanho*/
+    color: #fff;
+  }
+  
+  .about-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    padding: 34px 14px 64px 14px;
+  }
+  .about-content img {
+    max-width: 570px;
+  }
+  
+  .about-content div {
+    flex: 1; /* as duas divs habitam metade da tela */
+  }
+  
+  .about-description {
+    margin-left: 90px;
+  }
+  .about-description h2 {
+    font-size: 38px;
+    margin-bottom: 24px;
+    font-weight: 700;
+  }
+  .about-description p {
+    margin-bottom: 16px;
+    line-height: 150%;
+  }
+  
+  @media screen and (max-width: 768px) {
+    .about-content {
+      flex-direction: column; /* coloca um abaixo do outro */
+    }
+    .about-description {
+      margin-left: 25px;
+    }
+  }
+
+
+  .services {
+    background-color: #fff;
+    color: #06121e;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 54px 14px;
+  }
+  
+  .services img {
+    margin: 0 auto;
+    width: 354px;
+    text-align: center;
+    display: flex;
+  }
+  
+  .services-content h2 {
+    text-align: center;
+    margin-bottom: 14px;
+  }
+  
+  .services-content p {
+    line-height: 150%;
+    margin-bottom: 14px;
+    text-align: center;
+    max-width: 780px;
+  }
+  
+  .haircuts {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    padding: 0 44px 34px 44px;
+  }
+  
+  .haircut {
+    flex: 1; /*tentam ocupar o tamanho maximo*/
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0px -1px 17px -4px rgba(0, 0, 0, 0.45);
+    overflow: hidden; /*tudo que estiver fora esconde=arredonda a borda da img*/
+  }
+  .haircut img {
+    width: 100%;
+    max-width: 354px;
+    transition: transform 0.25s;
+  }
+  
+  .haircut img:hover {
+    transform: scale(1.2);
+    z-index: 1;
+  }
+  
+  .haircut-info {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 15px;
+    background-color: #fff;
+    z-index: 99; /*para nao sobrepor o titulo*/
+  }
+  
+  .haircut-info button {
+    color: #fff;
+    background-color: #ff0000;
+    padding: 8px 8px;
+    margin-right: 20px;
+    border-radius: 4px;
+    border: 0;
+    cursor: default;
+  }
+  
+  @media screen and (max-width: 768px) {
+    .haircuts {
+      flex-direction: column;
+    }
+    .haircut img {
+      max-width: 740px;
+    }
+  }
+
+
+/* Estilo  botão */
+.botao-agendamento {
+    margin-left: 50px;
+    font-size: 16px; /* Tamanho da fonte */
+    font-weight: bold; /* Deixa o texto em negrito */
+    color: white; /* Cor do texto */
+    text-decoration: none; /* Remove o sublinhado do link */
+    padding: 10px 20px; /* Adiciona espaço interno no botão */
+    border: 2px solid white; /* Borda branca visível inicialmente */
+    border-radius: 25px; /* Bordas arredondadas */
+    position: relative; /* Para usar animações e efeitos */
+    overflow: hidden; /* Garante que o efeito de preenchimento da borda não ultrapasse */
+    transition: color 0.3s, border-color 0.3s; /* Suaviza a transição da cor do texto e borda */
+}
+
+/* Efeito ao passar o mouse sobre o botão */
+.botao-agendamento:hover {
+    color: white; /* O texto continua branco */
+    border-color: red; /* Muda a borda para vermelha */
+    color: red;
+}
+
+/* Animação de preenchimento da borda */
+.botao-agendamento::before {
+    content: ''; /* Necessário para criar o pseudo-elemento */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%; /* Inicialmente o pseudo-elemento ocupa todo o botão */
+    height: 100%; /* Inicialmente o pseudo-elemento ocupa todo o botão */
+    background-color: red; /* Cor de preenchimento da borda */
+    transition: width 0.3s, height 0.3s, top 0.3s, left 0.3s; /* Suaviza a animação */
+    border-radius: 50%; /* Faz o preenchimento da borda arredondada */
+    z-index: -1; /* Coloca o pseudo-elemento abaixo do texto */
+    transform: scale(0); /* Inicialmente o pseudo-elemento é invisível */
+}
+
+/* Efeito de preenchimento do pseudo-elemento quando passa o mouse */
+.botao-agendamento:hover::before {
+    transform: scale(1); /* Faz o pseudo-elemento preencher o botão */
+}
+
+
+.profissionais {
+    background-color: var(--verde);
+    text-align: center;
+    padding: 2.2rem;
+}
+
+
+
+.descricao-barbeiros {
+    font-family: var(--Roboto);
+    font-size: 2rem;
+    font-weight: 700;
+    color: white;
+    padding-bottom: 1rem;
+}
+
+.nome-barbeiro {
+    margin-top: 2rem;
+    color:rgb(255, 255, 255);
+    font-weight: 700;
+    font-family: var(--Roboto);
+    margin-bottom: 2rem;
+    font-size: 1.3rem;
+}
+
+.item-barbeiro {
+    color:#06121e;
+}
+
+.barbeiro-foto {
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 300px;
+    height: 300px;
+    background-size: 300px;
+    border: 4px solid var(--preto);
+    margin: 0 auto;
+}
+
+.barbeiro-1 {
+    background-image: url("img/felipe.jpg"); /* Imagem de fundo */
+    background-size: cover; /* Faz a imagem cobrir toda a área do elemento */
+    background-position: center; /* Centraliza a imagem */
+    border-radius: 15px; /* Bordas arredondadas */
+    height: 400px; /* Altura da imagem (ajuste conforme necessário) */
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.2); /* Adiciona uma sombra ao redor da imagem */
+    position: relative; /* Necessário para sobreposições e efeitos */
+    overflow: hidden; /* Garante que nada ultrapasse as bordas arredondadas */
+}
+
+/* Adiciona um efeito de sobreposição escura ao passar o mouse */
+.barbeiro-1::before {
+    content: ''; /* Cria um pseudo-elemento */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4); /* Sobreposição escura */
+    transition: background-color 0.3s ease; /* Transição suave */
+    border-radius: 15px; /* Mantém a borda arredondada da sobreposição */
+    z-index: 1; /* Coloca a sobreposição acima da imagem */
+}
+
+/* Quando passar o mouse, a sobreposição desaparece */
+.barbeiro-1:hover::before {
+    background-color: rgba(0, 0, 0, 0); /* Torna a sobreposição transparente */
+}
+
+/* Ajusta o texto ou elementos dentro da área de imagem */
+.barbeiro-1 h2 {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    color: white; /* Cor do texto */
+    font-size: 24px; /* Tamanho do texto */
+    font-weight: bold; /* Deixa o texto em negrito */
+    z-index: 2; /* Coloca o texto acima da sobreposição */
+}
+
+.barbeiro-2 {
+    background-image: url("img/sofia.jpg"); /* Imagem de fundo */
+    background-size: cover; /* Faz a imagem cobrir toda a área do elemento */
+    background-position: center; /* Centraliza a imagem */
+    border-radius: 15px; /* Bordas arredondadas */
+    height: 400px; /* Altura da imagem (ajuste conforme necessário) */
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.2); /* Adiciona uma sombra ao redor da imagem */
+    position: relative; /* Necessário para sobreposições e efeitos */
+    overflow: hidden; /* Garante que nada ultrapasse as bordas arredondadas */
+}
+
+/* Adiciona um efeito de sobreposição escura ao passar o mouse */
+.barbeiro-2::before {
+    content: ''; /* Cria um pseudo-elemento */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4); /* Sobreposição escura */
+    transition: background-color 0.3s ease; /* Transição suave */
+    border-radius: 15px; /* Mantém a borda arredondada da sobreposição */
+    z-index: 1; /* Coloca a sobreposição acima da imagem */
+}
+
+/* Quando passar o mouse, a sobreposição desaparece */
+.barbeiro-2:hover::before {
+    background-color: rgba(0, 0, 0, 0); /* Torna a sobreposição transparente */
+}
+
+/* Ajusta o texto ou elementos dentro da área de imagem */
+.barbeiro-2 h2 {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    color: white; /* Cor do texto */
+    font-size: 24px; /* Tamanho do texto */
+    font-weight: bold; /* Deixa o texto em negrito */
+    z-index: 2; /* Coloca o texto acima da sobreposição */
+}
+
+
+@media screen and (min-width: 1024px) {
+.profissionais{
+    padding: 0;
+    width: 100%;
+}
+.agendar {
+    display: block;
+    background-image: url("img/banner-corte.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    }
+.itens-agendar{
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    max-width: 900px;
+    min-height: 200px;
+    margin: auto;
+}
+.titulo-agendar{
+    color: var(--marrom-claro);
+    font-weight: 700;
+    font-size: 2rem;
+    line-height: 28px;
+    font-family: var(--Roboto);
+    }
+.botao-agendar{
+    width: 20rem;
+    text-decoration: none;
+    padding: 1.3rem;
+}
+.barbeiros{
+    padding: 4rem;
+    }
+.lista-barbeiros{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    padding-bottom: 5rem;
+    }
+}
+@media screen and (max-width: 768px) {
+    .agendar {
+        display: none;
+    }
+  }
+
+
+  .footer {
+    background-color: #06121e;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px 0; /* Diminuído o padding */
+    gap: 24px;
+    text-align: center;
+}
+
+.footer-logo img {
+    max-width: 180px; /* Logo um pouco menor */
+    margin-bottom: 16px; /* Menos espaçamento */
+}
+
+.footer-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    width: 100%;
+    max-width: 900px; /* Largura máxima reduzida */
+    text-align: center;
+}
+
+.footer-section h3 {
+    font-size: 1.2rem; /* Fonte reduzida */
+    margin-bottom: 0.8rem;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.footer-section ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin: 0.5rem 0;
+}
+
+.footer-section ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
+
+.footer-section ul li a:hover {
+    color: #ff0000;
+}
+
+.footer-info {
+    font-size: 0.8rem; /* Fonte menor */
+    max-width: 800px;
+    margin-bottom: 10px; /* Menor margem */
+    color: #fff;
+}
+
+.footer-icons {
+    display: flex;
+    gap: 15px; /* Menor espaçamento */
+}
+
+.footer-icons a {
+    text-decoration: none;
+    color: #fff;
+    transition: color 0.3s ease;
+}
+
+.footer-icons a:hover {
+    color: #ff0000;
+}
+
+@media screen and (max-width: 768px) {
+    .footer-links {
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+    }
+}
+
+  .btn-whatsapp {
+    position: fixed;
+    bottom: 14px;
+    right: 24px;
+    z-index: 99;
+  }
+  .btn-whatsapp img {
+    max-width: 60px;
+    transition: transform 0.4s; /*efeito*/
+  }
+  .btn-whatsapp img:hover {
+    transform: scale(1.1); /*efeito*/
+  }
+  
+  .btn-whatsapp .tooltip-text {
+    visibility: hidder;
+    position: absolute;
+    width: 128px;
+    top: 8px;
+    left: -144px;
+    padding: 4px;
+    border-radius: 8px;
+    text-align: center;
+    background-color: #232224;
+    color: #fff;
+    opacity: 0;
+    transition: opacity 0.4s;
+  }
+  
+  .btn-whatsapp:hover .tooltip-text {
+    visibility: visible;
+    opacity: 1;
+  }
+  
+  @media screen and (max-width: 768px) {
+    .btn-whatsapp img {
+      max-width: 50px;
+    }
+  }
+  body {
+    font-family: "Sora", sans-serif;
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    background-color: #06121e;
+  }
+  
+  button {
+    font-family: "Sora", sans-serif;
+    cursor: pointer;
+  }
+  
+  svg {
+    width: 100%;
+  }
+  
+  img {
+    width: 100%;
+  }
+  
+  a {
+    cursor: pointer;
+    text-decoration: none;
+  }/*# sourceMappingURL=style.css.map */

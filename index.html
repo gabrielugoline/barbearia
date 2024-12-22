@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="shortcut icon" href="fav.png" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;500&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <title>MrFelipe Barbearia</title>
+</head>
+<body>
+
+    <header class="menu">
+        <div class="menu-container">
+            <a class="menu-logo" href="#"><img src="logo2.png" alt="logo"></a>
+
+            <nav id="my-menu-nav" class="menu-nav">
+                <ul>
+                    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                    <li><a href="#">home</a></li>
+                    <li><a href="#sobre">sobre</a></li>
+                    <li><a href="#services">serviços</a></li>
+                    <li><a href="#barbeiros">profissionais</a></li>
+                    <li><a href="#localização">localização</a></li>
+                    <li><a class="menu-agendamento-btn" href="https://sites.appbarber.com.br/mrfelipebarbearia"> agendar</a></li>
+                   
+
+                        
+                </ul>
+            </nav>
+            <span class="menu-open" style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
+        </div>
+
+    </header>
+
+    <main class="intro">
+        <div class="intro-container">
+            <h1>Seu estilo</h1>
+            <h1>nosso <strong>compromisso.</strong> </h1>
+        </div>
+ 
+    </main>
+
+ 
+
+    <section class="about" id="sobre">
+        <div class="container about-content">
+            <div data-aos="zoom-in" data-aos-delay="100">
+                <img 
+                src="img/mold1.png" 
+                alt="Imagens sobre a barbearia" 
+                />
+            </div>
+                <div class="about-description"
+                data-aos="zoom-out-left" data-aos-delay="100">
+                    <h2>SOBRE</h2>
+                    <p>Situada no bairro Diamante, a MrFelipe Barbearia se destaca pela excelência de seus profissionais e ambiente acolhedor, moderno, aconchegante e agradável. Além de disponibilizar bebidas para consumo no local, a barbearia oferece diversas atrações, como por exemplo uma boa música tema e sinuca.</p>
+                    <p>Horários de funcionamento: <br>Segunda a sexta: <strong>09:00</strong> ás <strong>20:00</strong><br>Sábado: <strong>09:00</strong> ás <strong>18:00</strong></p>
+                </div><!--about-description-->
+        </div><!--container about-content-->
+    </section><!--about-->
+
+
+    <section class="services" id="services">
+        <div class="services-content container">
+            <h2>SERVIÇOS</h2>
+            <p>Confira nossos principais serviços, todos feitos por profissionais qualificados para atender suas necessidades e realçar seu estilo</p>
+        </div><!--services-content container-->
+
+        <section class="haircuts">
+            <div class="haircut" data-aos="fade-up" data-aos-delay="150">
+                <img src="img/1.png" 
+                alt="Corte Normal"
+                />
+                <div class="haircut-info">
+                    <strong>Corte Completo</strong>
+                    <button>
+                        R$ 38,00
+                    </button>
+                </div><!--haircut-info-->
+            </div><!--haircut-->
+
+            <div class="haircut" data-aos="fade-up" data-aos-delay="250">
+                <img src="img/3.png" 
+                alt="Corte Normal"
+                />
+                <div class="haircut-info">
+                    <strong>Barba Simples</strong>
+                    <button>
+                        R$ 28,00
+                    </button>
+                </div><!--haircut-info-->
+            </div><!--haircut-->
+
+            <div class="haircut" data-aos="fade-up" data-aos-delay="400">
+                <img src="img/2.png" 
+                alt="Corte Normal"
+                />
+                <div class="haircut-info">
+                    <strong>Barboterapia</strong>
+                    <button>
+                        R$ 38,00
+                    </button>
+                </div><!--haircut-info-->
+            </div><!--haircut-->
+        </section><!--haircuts-->
+    </section><!--services-->
+
+
+<section class="profissionais" id="barbeiros">
+    <div class="agendar">
+        <div class="itens-agendar">
+            <pre class="titulo-agendar"> <span style="color: #06121e;">Agende o seu horário On-line ou pelo App! </pre></span>
+            <a href="https://sites.appbarber.com.br/mrfelipebarbearia" class="botao-agendamento botao-agendar" id="agendarbotao">AGENDE SEU HORÁRIO</a>
+        </div>
+    </div>
+    <div class="barbeiros">
+        <div class="border"></div>
+        <h1 class="descricao-barbeiros">CONHEÇA NOSSOS PROFISSIONAIS</h1>
+    </div>
+    <ul class="lista-barbeiros">
+        <li class="item-barbeiro">
+            <div class="barbeiro-foto barbeiro-1">
+                <div class="borda-foto"></div>
+            </div>
+            <p class="nome-barbeiro">Mr. Felipe</p>
+        </li>
+        <li class="item-barbeiro">
+            <div class="barbeiro-foto barbeiro-2">
+                <div class="borda-foto"></div>
+            </div>
+            <p class="nome-barbeiro">Mr. Sofia</p>
+        </li>
+    </ul>
+</section>
+
+
+    <!--Footer-->
+
+    <div class="services" id="localização">
+        <h2>ONDE ESTAMOS LOCALIZADOS?</h2>
+        <p>Estamos localizados em um lugar de fácil acesso. Venha nos visitar e aproveite um atendimento exclusivo em um espaço pensado para seu conforto.</p>
+    </div><!--services-->
+    <iframe
+    width="100%"
+    height="450"
+    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3656.674430230235!2d-43.9534849!3d-19.9730554!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x96b38d1a85cbf91%3A0xe5c3192190a6f27b!2sAv%20Jo%C3%A3o%20Rolla%20Filho%2C%20333%20Diamante%2FBarreiro%2C%20Belo%20Horizonte%2C%20MG!5e0!3m2!1spt-BR!2sbr!4v1707106385831"
+    style="border:0;"
+    allowfullscreen=""
+    loading="lazy"
+    referrerpolicy="no-referrer-when-downgrade">
+</iframe>
+
+<div class="footer">
+    <!-- Logo -->
+    <div class="footer-logo">
+        <img src="fav.png" alt="Logo" />
+    </div>
+
+    <!-- Links úteis e Contato -->
+    <div class="footer-links">
+        <div class="footer-section">
+            <h3>Links úteis</h3>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#sobre">Sobre</a></li>
+                <li><a href="#services">Serviços</a></li>
+                <li><a href="#barbeiros">Profissionais</a></li>
+                <li><a href="#localização">Localização</a></li>
+            </ul>
+        </div>
+    </div>
+
+   
+
+    <!-- Informações de copyright -->
+    <p class="footer-info">MrFelipe Barbearia © 2024 - Todos os Direitos reservados |  - BARBEARIA MRF LTDA - Av Jõao Rolla Filho, 333 - Diamante/BH</p>
+
+    <!-- Ícones de redes sociais -->
+    <div class="footer-icons">
+        <a href="mailto:mrfelipebarbearia@gmail.com"><i class="fa-solid fa-envelope fa-2x"></i></a>
+        <a href="https://wa.me/5531992549518"><i class="fa-brands fa-whatsapp fa-2x"></i></a>
+        <a href="https://www.instagram.com/mrfelipebarbearia/"><i class="fa-brands fa-instagram fa-2x"></i></a>
+    </div>
+</div>
+
+
+    <!--BUTTON_WHATSAPP-->
+
+    <a 
+     href="https://wa.me/5531992549518"
+     class="btn-whatsapp"
+     target="_blank"
+     data-aos="zoom-in-up"
+     data-aos-delay="400"
+    >
+        <img src="img/whatssapp.svg" alt="Botao whatssapp" />
+        <span class="tooltop-text"></span>
+    </a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- formatação js-->
+<script src="formatacao.js"></script>
+</body>
+</html>
